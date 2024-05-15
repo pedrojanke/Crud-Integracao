@@ -20,17 +20,17 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "classificacao")
-public class Classificacao {
+@Table(name = "classification")
+public class Classification {
     @Id
     @GeneratedValue(generator = "uuid2")
     @GenericGenerator(name = "uuid2", strategy = "uuid2")
     @Column(name = "id", length = 64)
     private UUID id;
     @Column(length = 45, unique = true, nullable = false)
-    private String nomeclassificacao;
+    private String name;
     @Column(nullable = false)
-    private Date datadecadastro;
+    private Date registrionDate;
     @Column(nullable = false)
-    private Date datainativo;
+    private Date inactivationDate;
 }

@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.integracao.service.GeneroService;
+import com.example.integracao.service.GenderService;
 
 @RestController
 @RequestMapping("/api/v1/genero")
 public class GeneroController {
 
     @Autowired
-    private GeneroService generoService;
+    private GenderService generoService;
     
 }

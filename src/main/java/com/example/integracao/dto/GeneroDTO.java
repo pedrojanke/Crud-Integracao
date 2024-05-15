@@ -1,4 +1,4 @@
-package com.example.integracao.dtos;
+package com.example.integracao.dto;
 
 import java.sql.Date;
 

@@ -16,15 +16,5 @@ public class GeneroController {
 
     @Autowired
     private GeneroService generoService;
-
-    @PostMapping
-    public ResponseEntity<ApiResponse> createService(@RequestBody GeneroDTO dto) {
-        Optional<dto> service = serviceServices.findServiceByName(dto.name());
-        if (service.isPresent()) {
-            return ResponseEntity.status(HttpStatus.CONFLICT).body(new ApiResponse("Serviço já cadastrado."));
-        }
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(new ApiResponse<Services>("Created", serviceServices.createService(dto)));
-    }
     
 }

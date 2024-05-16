@@ -3,10 +3,10 @@ package com.example.integracao.entities;
 import java.sql.Date;
 import java.time.LocalDate;
 
+import org.hibernate.annotations.UuidGenerator;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -22,7 +22,7 @@ import lombok.Setter;
 @Table(name = "participant")
 public class Participant {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "uuid2")
+    @UuidGenerator
     @Column(name = "id", length = 64, updatable = false)
     private String id;
     @Column(length = 45, unique = true, nullable = false)

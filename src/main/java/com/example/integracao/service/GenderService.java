@@ -48,4 +48,39 @@ public class GenderService {
         }
     }
 
+    public Gender findGender(String id){
+        try{
+            Optional<Gender> gender = genderRepository.findById(id);
+            if(gender.isEmpty()) {
+                return null;
+            }
+
+            return gender.get();
+
+        } catch (Exception e){
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
+    public void deleteGender(String id){
+        try{
+            genderRepository.deleteById(id);
+         } catch (Exception e){
+             throw new RuntimeException(e.getMessage());
+         }
+    }
+
+    public Gender updateGenderById(String id, GenderDTO dto){
+        try{
+            Optional<Gender> gender = genderRepository.findById(id);
+            if(gender.isEmpty()) {
+                return null;
+            }
+            Gender newGender = genderRepository.save(new Gender(id, dto.name(), LocalDate.now(), dto.inactivationDate()));
+            return newGender;
+        } catch (Exception e){
+            throw new RuntimeException(e.getMessage());
+        }
+    }
+
 }

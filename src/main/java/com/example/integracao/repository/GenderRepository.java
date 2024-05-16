@@ -10,7 +10,8 @@ import org.springframework.stereotype.Repository;
 import com.example.integracao.entities.Gender;
 
 @Repository
-public interface GenderRepository extends JpaRepository<Gender , UUID>{
+public interface GenderRepository extends JpaRepository<Gender , String>{
     @Query("SELECT g FROM gender g WHERE g.name = ?1")
     Optional<Gender> findByName(String name);
+    Optional<Gender> findById(String id);
 }

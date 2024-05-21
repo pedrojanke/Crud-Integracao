@@ -27,8 +27,8 @@ public class Gender {
     private String id;
     @Column(length = 45, unique = true, nullable = false)
     private String name;
-    @Column(nullable = true)
+    @Column(length = 12, nullable = true)
     private LocalDate registrionDate;
-    @Column(nullable = true)
+    @Column(length = 12, nullable = true)
     private Date inactivationDate;
 }

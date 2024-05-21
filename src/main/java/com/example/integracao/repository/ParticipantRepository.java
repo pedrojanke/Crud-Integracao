@@ -7,7 +7,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.integracao.entities.Participant;
 
-public interface ParticipantRepository extends JpaRepository<Participant , Long>{
+public interface ParticipantRepository extends JpaRepository<Participant , String>{
     @Query("SELECT p FROM participant p WHERE p.name = ?1")
     Optional<Participant> findByName(String name);
+    Optional<Participant> findById(String id);
 }

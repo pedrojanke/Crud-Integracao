@@ -16,13 +16,14 @@ import jakarta.transaction.Transactional;
 @Service
 public class GenderService {
 
+
     @Autowired
     private GenderRepository genderRepository;
 
     @Transactional
     public Gender createGender(GenderDTO dto){
         try{
-            Gender newGender = genderRepository.save(new Gender(null, dto.name(), LocalDate.now(), null));
+            Gender newGender = genderRepository.save(new Gender(null, dto.name(), LocalDate.now(), dto.inactivationDate()));
             return newGender;
         } catch (Exception e){
             throw new RuntimeException(e.getMessage());

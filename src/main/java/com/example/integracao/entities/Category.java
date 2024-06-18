@@ -25,7 +25,7 @@ public class Category {
     @UuidGenerator
     @Column(name = "id", length = 64, updatable = false)
     private String id;
-    @Column(length = 45, unique = true, nullable = false)
+    @Column(length = 50, unique = true, nullable = false)
     private String name;
     @Column(nullable = true)
     private LocalDate registrionDate;
